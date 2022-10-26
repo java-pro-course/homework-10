@@ -1,6 +1,8 @@
 package com.company;
 
-interface Printable{}
+interface Printable{
+	void getInfo();
+}
 
 class Person implements Printable {
     private String name;
@@ -31,6 +33,7 @@ class Person implements Printable {
         this.mName = mName;
         this.bYear = bYear;
     }
+    @Override
     public void getInfo(){
         System.out.println("The name is " + name);
         System.out.println("The surname is " + surname);
