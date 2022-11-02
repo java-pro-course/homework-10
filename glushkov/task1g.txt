@@ -1,0 +1,105 @@
+import java.util.*;
+
+
+class Person implements Printable {
+    private String name;
+    private String familia;
+    private String ochestvo;
+    private String pol;
+    private int birthday;
+
+    public String getName() {
+        return name;
+    }
+
+    public String getSurname() {
+        return familia;
+    }
+
+    public String getMdlName() {
+        return ochestvo;
+    }
+
+    public int getBirthYear() {
+        return birthday;
+    }
+
+    public String getpol() {
+        return pol;
+    }
+
+    public Person(String name, String familia, String ochestvo, int birthday, String pol) {
+        this.name = name;
+        this.familia = familia;
+        this.ochestvo = ochestvo;
+        this.birthday = birthday;
+        this.pol = pol;
+    }
+
+    public void getInfo() {
+        System.out.println("Имя " + name);
+        System.out.println("Фамилия " + familia);
+        System.out.println("Отчество " + ochestvo);
+        System.out.println("Год рождения " + birthday);
+        System.out.println("Пол " + pol);
+
+    }
+}
+interface Printable{
+    void getInfo();
+}
+class Student extends Person implements Printable{
+    private int NumSchool;
+    private String NameSchool;
+    private String Class;
+    private String LikeSubject;
+
+    public Student(String name, String familia, String ochestvo, int birthday, String pol, int NumSchool, String NameSchool, String Class, String LikeSubject) {
+        super(name, familia, ochestvo, birthday, pol);
+        this.NumSchool = NumSchool;
+        this.NameSchool = NameSchool;
+        this.Class = Class;
+        this.LikeSubject = LikeSubject;
+    }
+    public void getInfoAboutStudent(){
+        super.getInfo();
+        System.out.println("Номер школы " + NumSchool);
+        System.out.println("Название школы " + NameSchool);
+        System.out.println("Класс " + Class);
+        System.out.println("Любимый предмет " + LikeSubject);
+        System.out.println("");
+    }
+}
+
+class Employee extends Person implements Printable{
+    private String NameCom;
+    private String rang;
+    private int money;
+    private String Coolday;
+
+    public Employee(String name, String familia, String ochestvo, int birthday, String pol, String NameCom, String rang, int money, String Coolday) {
+        super(name, familia, ochestvo, birthday, pol);
+        this.NameCom = NameCom;
+        this.rang = rang;
+        this.money = money;
+        this.Coolday = Coolday;
+    }
+    public void getInfoAboutEmploee(){
+        super.getInfo();
+        System.out.println("Название компании " + NameCom);
+        System.out.println("Ранг " + rang);
+        System.out.println("Зарплата " + money + " за месяц");
+        System.out.println("Любимый день недели " + Coolday);
+        System.out.println("");
+    }
+}
+
+public class Main {
+
+    public static void main(String[] args) {
+        Student student = new Student("Vasiliy", "Ivanovich", "Dmitriev",2000, "Male", 14, "Vladimira", "IT", "Math");
+        Employee employee = new Employee("Ivan", "Andreevich", "Glushkovich", 1978, "male", "A finger", "Manager", 100000, "FriDay");
+        student.getInfoAboutStudent();
+        employee.getInfoAboutEmploee();
+    }
+}
