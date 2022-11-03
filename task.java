@@ -79,14 +79,14 @@ class Student extends Human{
         this.numOfSchool = numOfSchool;
     }
 
-//    @Override
-//    public void getInfo() {
-//        super.getInfo();
-//        System.out.println("Школа: " + nameOfSchool);
-//        System.out.println("Номер школы: " + numOfSchool);
-//        System.out.println("Класс: " + numOfClass);
-//        System.out.println("Любимый урок: " + favLesson);
-//    }
+    @Override
+    public void getInfo() {
+        super.getInfo();
+        System.out.println("Школа: " + nameOfSchool);
+        System.out.println("Номер школы: " + numOfSchool);
+        System.out.println("Класс: " + numOfClass);
+        System.out.println("Любимый урок: " + favLesson);
+    }
 }
 class Employee extends Human{
     private String company;
